@@ -1,291 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piciosa hermosa</title>
-    <style>
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            padding-top: 0px;
-            /* Location of the box */
-            padding-bottom: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(0, 0, 0, 0.4);
-            /* Black w/ opacity */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTH</title>
+  <style>
+   * {
+    min-width: 0;
+    font: inherit;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100dvh;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+  
 
-        /* Modal Content */
-        .modal-content {
-            position: relative;
-            margin: auto;
-            padding: 0;
-            width: 80%;
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s
-        }
-
-        /* Add Animation */
-        @-webkit-keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
-
-            to {
-                top: 0;
-                opacity: 1
-            }
-        }
-
-        @keyframes animatetop {
-            from {
-                top: -300px;
-                opacity: 0
-            }
-
-            to {
-                top: 0;
-                opacity: 1
-            }
-        }
-
-
-        .frame {
-            width: 600px;
-            height: 350px;
-            margin: 250px auto 0;
-            position: relative;
-            background: #435d77;
-            border-radius: 0 0 40px 40px;
-        }
-
-        #button_open_envelope {
-            width: 180px;
-            height: 30px;
-            position: absolute;
-            z-index: 311;
-            top: 250px;
-            left: 208px;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 26px;
-            padding: 15px 0;
-            border: 2px solid #fff;
-            transition: all .3s ease-in-out;
-        }
-
-        #button_open_envelope:hover {
-            background: #FFf;
-            color: #081D3D;
-            transform: scale(1.1);
-            cursor: pointer;
-        }
-
-        .message {
-            position: relative;
-            width: 580px;
-            min-height: 300px;
-            height: auto;
-            background: #fff;
-            margin: 0 auto;
-            top: 30px;
-            box-shadow: 0 0 5px 2px #333;
-            transition: 2s ease-in-out;
-            transition-delay: 1.5s;
-            z-index: 300;
-        }
-
-        .left,
-        .right,
-        .top {
-            width: 0;
-            height: 0;
-            position: absolute;
-            top: 0;
-            z-index: 310;
-        }
-
-        .left {
-            border-left: 300px solid #081d3d;
-            border-top: 160px solid transparent;
-            border-bottom: 160px solid transparent;
-        }
-
-        .right {
-            border-right: 300px solid #081d3d;
-            border-top: 160px solid transparent;
-            border-bottom: 160px solid transparent;
-            ;
-            left: 300px;
-        }
-
-        .top {
-            border-right: 300px solid transparent;
-            border-top: 200px solid #193e6e;
-            border-left: 300px solid transparent;
-            transition: transform 1s, border 1s, ease-in-out;
-            transform-origin: top;
-            transform: rotateX(0deg);
-            z-index: 500;
-        }
-
-        .bottom {
-            width: 600px;
-            height: 190px;
-            position: absolute;
-            background: #072247;
-            top: 160px;
-            border-radius: 0 0 30px 30px;
-            z-index: 310;
-        }
-
-        .open {
-            transform-origin: top;
-            transform: rotateX(180deg);
-            transition: transform .7s, border .7s, z-index .7s ease-in-out;
-            border-top: 200px solid #2c3e50;
-            z-index: 200;
-        }
-
-        .pull {
-            -webkit-animation: message_animation 2s 1 ease-in-out;
-            animation: message_animation 2s 1 ease-in-out;
-            -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-            -webkit-animation-delay: .9s;
-            animation-delay: .45s;
-            transition: 1.5s;
-            transition-delay: 1s;
-            z-index: 300;
-        }
-
-
-
-        @-webkit-keyframes message_animation {
-            0% {
-                transform: translatey(0px);
-                z-index: 300;
-                transition: 1s ease-in-out;
-            }
-
-            50% {
-                transform: translatey(-340px);
-                z-index: 300;
-                transition: 1s ease-in-out;
-            }
-
-            51% {
-                transform: translatey(-340px);
-                z-index: 350;
-                transition: 1s ease-in-out;
-            }
-
-            100% {
-                transform: translatey(0px);
-                z-index: 350;
-                transition: 1s ease-in-out;
-            }
-        }
-
-        @keyframes message_animation {
-            0% {
-                transform: translatey(0px);
-                z-index: 300;
-                transition: 1s ease-in-out;
-            }
-
-            50% {
-                transform: translatey(-340px);
-                z-index: 300;
-                transition: 1s ease-in-out;
-            }
-
-            51% {
-                transform: translatey(-340px);
-                z-index: 350;
-                transition: 1s ease-in-out;
-            }
-
-            100% {
-                transform: translatey(0px);
-                z-index: 350;
-                transition: 1s ease-in-out;
-            }
-        }
-    </style>
+  body {
+    background-color: #111111;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+  
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container-letter {
+    position: relative;
+  }
+  
+  .cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #5e5d5d;
+    border-bottom: 100px solid transparent;
+  
+    /*  */
+    transition: transform .75s;
+    transform-origin: top;
+  }
+  
+  .paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 2rem;
+    right: 5px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size:larger;
+    text-align: center;
+    /*  */
+    z-index: -1;
+    background: #d8b2d3;
+    width: 390px;
+    height: 180px;
+  
+    transition: all .75s;
+  }
+  
+  .letter {
+    border-left: 200px solid #797676;
+    border-right: 200px solid #797676;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #5e5d5d;
+  }
+  
+  .options {
+    display: flex;
+    gap: 5rem;
+  
+    & button {
+      color: #444444;
+      font-weight: 600;
+      border-radius: 3px;
+      background: #aaa7a8;
+      padding: 0.5rem 1rem;
+      border: 1px solid #444444;
+      cursor: pointer;
+    }
+  
+    & button:hover {
+      background: #b4b2b2;
+      color: white;
+    }
+  }
+  
+  .open-cover {
+    transform: rotatex(180deg);
+  }
+  
+  .open-paper {
+    animation: openPaper .5s forwards;
+  }
+  
+  @keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -120px;
+    }
+  }
+  
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+  
+  @keyframes closePaper {
+    0% {
+      top: -120px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  
+  .heart {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 42%;
+    margin: auto;
+    font-size: 3rem;
+  
+    color: #fe3334;
+  
+    animation: crecer 1s forwards ;
+  }
+  
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+  
+    }
+  }
+  </style>
 </head>
-
 <body>
-
-    <div class="frame">
-        <div id="button_open_envelope" style="text-align: center;">
-            Open
-        </div>
-        <div class="message" style="text-align: center;">
-            <div>
-                <br>
-                <br>
-                <h1>Invitation</h1>
-                <h2>You're invited</h2>
-                <h3>Date | Time</h3>
-            </div>
-        </div>
-        <div class="bottom"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
+  <main>
+    <div class="container-letter">
+      <div class="cover"></div>
+      <span class="heart">🦇</span>
+      <p class="paper" id="mainMessage">
+        Testing
+        
+      </p>
+      <div class="letter"></div>
     </div>
+    <div class="options">
+      <button id="open">Open</button>
+      <button id="close">Close</butto>
     </div>
 
-    <script>
+  </main>
+  <script>
+    const urlSearchParams = new URLSearchParams(window.location.search)
+
+const messageCustom = urlSearchParams.get('message')
+
+if (messageCustom) {
+
+  const mainMessageElement = document.querySelector('#mainMessage')
+  mainMessageElement.textContent = decodeURI(messageCustom)
+}
+
+// the tutorial starts here
+
+const btnOpenElement = document.querySelector('#open')
+const btnCloseElement = document.querySelector('#close')
+
+btnCloseElement.disabled = true
+
+
+
+btnOpenElement.addEventListener('click', ()=> {
+  btnOpenElement.disabled = true
+  btnCloseElement.disabled = false
+  const coverElement = document.querySelector('.cover')
+  coverElement.classList.add('open-cover')
+
+  setTimeout(()=>{
+    //
+    coverElement.style.zIndex = -1
     
+    const paperElement = document.querySelector('.paper')
+    paperElement.classList.remove('close-paper')
+    paperElement.classList.add('open-paper')
 
-        // Get the modal
-        var modal = document.getElementById('myModal');
+    // animacion del corazón
+    const heartElement = document.querySelector('.heart')
+    heartElement.style.display = 'block'
+  
+  }, 500)
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+})
+btnCloseElement.addEventListener('click', ()=> {
+  btnOpenElement.disabled = false
+  btnCloseElement.disabled = true
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+  const coverElement = document.querySelector('.cover')
+  const paperElement = document.querySelector('.paper')
+  paperElement.classList.remove('open-paper')
+  paperElement.classList.add('close-paper')
+  
+  setTimeout(()=>{
+    coverElement.style.zIndex = 0
+    coverElement.classList.remove('open-cover')
 
-        // When the user clicks the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
+    // animacion del corazón
+    const heartElement = document.querySelector('.heart')
+    heartElement.style.display = 'none'
+  },500)
+})
+  </script>
 </body>
-
 </html>
